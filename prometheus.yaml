@@ -1,0 +1,13 @@
+# production.yml
+services:
+  api:
+    image: food-detection-api
+    restart: always
+    environment:
+      - ENVIRONMENT=production
+      - API_HOST=0.0.0.0
+      - API_PORT=80
+    ports:
+      - "80:80"
+    networks:
+      - production-network
